@@ -168,9 +168,10 @@ export default class OverlayView extends Component {
     return (
       <View style={styles.screen} pointerEvents={this.overlayPointerEvents}>
         <Animated.View
-          style={[styles.screen, {backgroundColor: '#000', opacity: this.state.overlayOpacity}]}
+          pointerEvents={this.overlayPointerEvents}
+          style={[styles.screen, { backgroundColor: '#000', opacity: this.state.overlayOpacity }]}
           {...this.panResponder.panHandlers}
-          />
+        />
         <View style={this.buildStyle()} pointerEvents='box-none'>
           {this.renderContent()}
         </View>
